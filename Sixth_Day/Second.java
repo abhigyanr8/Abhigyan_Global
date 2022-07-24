@@ -1,26 +1,24 @@
-package Fifth_day;
+package Sixth_Day_2;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Second 
-
 {
 	public static void main(String args[])
 	{
+		ArrayList ar = new ArrayList<String>();
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter String");
-		String s= sc.next();
-		System.out.println("Enter the value of n");
-		int n= sc.nextInt();
-		String result="";
+		ar.add("one");
+		ar.add("two");
+		ar.add("Three");
+		ar.add("Four");
 		
-		String sub = s.substring(s.length()-n,s.length());
-		for(int i=0;i<n;i++)
+		Iterator it = ar.iterator();
+		while(it.hasNext())
 		{
-			result=result+sub;
+			System.out.println(it.next());
 		}
-		System.out.println(result);
 		
 	}
 
