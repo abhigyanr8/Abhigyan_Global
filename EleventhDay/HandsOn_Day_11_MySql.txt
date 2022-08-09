@@ -1,0 +1,167 @@
+ 1)TableName: Employee
+
+
+
+ Test the table creation by viewing the structure using describe command
+
+ Name Null Type
+
+ ------------------------------ -------- ------------------------------
+
+ EMPLOYEE_ID int(6)
+
+ FIRST_NAME VARCHAR(20)
+
+ LAST_NAME VARCHAR(25)
+
+ DEPARTMENT_ID int(4)
+
+ SALARY double
+
+ 2) Insert one record without listing the column names in the insert statement. Check whether data is inserted
+
+ Eg:
+
+ employee_id first_name last_name department_id salary
+
+ 201 Michael Hartstein 20 13000
+
+ 3)
+
+ Insert one record without listing the column names in the insert statement where salary value remain undetermined. Check whether data is inserted
+
+ Eg:
+
+ employee_id first_name last_name department_id salary
+
+ 201 Michael Hartstein 20 13000
+
+ 202 Pat Fay 20 (null)
+
+ 4)
+
+ Insert one record with listing the column names avoiding salary column in the insert statement where salary value remain undetermined. Check whether data is inserted
+
+ employee_id first_name last_name department_id salary
+
+ 201 Michael Hartstein 20 13000
+
+ 202 Pat Fay 20 (null)
+
+ 203 Susan Mavris 40 (null)
+
+ 5)
+
+ Use the above Script to insert the below given records
+
+ employee_id first_name last_name department_id salary
+
+ 205 Shelley Higgins 110 12000
+
+ 100 Steven King 90 24000
+
+ 101 Neena Kochhar 90 17000
+
+ 102 Lex De Haan 90 17000
+
+ 
+
+ 112 Jose Manuel Urman 100 7800
+
+ 204 Hermann Baer 70 10000
+
+ 6)
+
+ Create a query to increase salary by 10% for all employees in dept 90.
+
+ 7)
+
+ Create a query to update Last_name of emp 202 to Higgins.
+
+ 8)
+
+ Delete employees whose name either first or last name has char seq of ‘man’
+
+
+
+
+
+
+
+-- create
+CREATE TABLE EMPLOYEE (
+  EmployeeId INTEGER(6),
+   FIRST_NAME VARCHAR(20),
+
+ LAST_NAME VARCHAR(25),
+
+ DEPARTMENT_ID INTEGER(4),
+
+ SALARY double
+
+);
+
+-- insert
+INSERT INTO EMPLOYEE VALUES ( 201,"Michael","Hartstein",20,13000);
+select * from EMPLOYEE;
+INSERT INTO EMPLOYEE VALUES (202,"Pat","Fay",20,(null));
+select * from EMPLOYEE;
+
+INSERT INTO EMPLOYEE VALUES(203,"Susan","Mavris",40 ,(null));
+select * from EMPLOYEE;
+
+INSERT INTO EMPLOYEE VALUES(205,"Shelley","Higgins",110,12000);
+INSERT INTO EMPLOYEE VALUES(100,"Steven","King",90,24000);
+INSERT INTO EMPLOYEE VALUES( 101,"Neena","Kochhar",90,17000);
+INSERT INTO EMPLOYEE VALUES(102,"Lex","De Haan",90,17000);
+INSERT INTO EMPLOYEE VALUES(112,"Jose","Manuel Urman", 100,7800);
+INSERT INTO EMPLOYEE VALUES(204,"Hermann","Baer",70,10000);
+
+select *from EMPLOYEE;
+
+update EMPLOYEE set SALARY=SALARY+SALARY/10 Where DEPARTMENT_ID=90;
+
+select * from EMPLOYEE;
+
+update EMPLOYEE set LAST_NAME="Higgins" where EmployeeId=202;
+
+select * from EMPLOYEE;
+
+delete from EMPLOYEE where FIRST_NAME=LIKE%man || LAST_NAME=LIKE%man;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
